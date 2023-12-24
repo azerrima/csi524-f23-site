@@ -1,0 +1,1286 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>CSI 424/524: Computer Security (Fall 2023) | CSI 424/524 (Fall 2023), Computer Science Department, University at Albany</title>
+<meta name="generator" content="Jekyll v4.2.2" />
+<meta property="og:title" content="CSI 424/524: Computer Security (Fall 2023)" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="CSI 424/524 (Fall 2023), Computer Science Department, University at Albany" />
+<meta property="og:description" content="CSI 424/524 (Fall 2023), Computer Science Department, University at Albany" />
+<link rel="canonical" href="www.cs.albany.edu/~amir/courses/csi524-f23/" />
+<meta property="og:url" content="www.cs.albany.edu/~amir/courses/csi524-f23/" />
+<meta property="og:site_name" content="CSI 424/524: Computer Security (Fall 2023)" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="CSI 424/524: Computer Security (Fall 2023)" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebSite","description":"CSI 424/524 (Fall 2023), Computer Science Department, University at Albany","headline":"CSI 424/524: Computer Security (Fall 2023)","name":"CSI 424/524: Computer Security (Fall 2023)","url":"www.cs.albany.edu/~amir/courses/csi524-f23/"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/~amir/courses/csi524-f23/assets/main.css"><link type="application/atom+xml" rel="alternate" href="www.cs.albany.edu/~amir/courses/csi524-f23/feed.xml" title="CSI 424/524: Computer Security (Fall 2023)" /></head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/~amir/courses/csi524-f23/">CSI 424/524: Computer Security (Fall 2023)</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <dl>
+  <dt>Lecture Time/Location</dt>
+  <dd>Tuesday/Thursday 10:30am–11:50am, Earth Science 242</dd>
+  <dt>Instructor</dt>
+  <dd><a href="https://www.cs.albany.edu/~amir/">Amir Masoumzadeh</a> (amasoumzadeh@albany.edu)
+    <ul>
+      <li>Office Hours: Tuesday/Thursday 4:30pm–5:30pm (UAB 422), or by appointment</li>
+    </ul>
+  </dd>
+  <dt>Teaching Assistants</dt>
+  <dd>Sai Jyotsna Vykuntam (svykuntam@albany.edu)
+    <ul>
+      <li>Office Hours: Wednesday 12:30pm–1:30pm (HU 122), Friday 11am–12pm (HU 127), or by appointment</li>
+    </ul>
+  </dd>
+</dl>
+
+<h1 id="course-overview">Course Overview</h1>
+<p>This course introduces students to the fundamental and technical problems surrounding computer security. The course reviews basic security concepts, design principles, and mechanisms. Throughout the course and based on hands-on exercises, students will develop an in-depth understanding of several vulnerabilities and corresponding countermeasures in system security, web security, and network security areas. Topics include privilege escalation, buffer overflow, race condition, SQL injection, cross-site scripting, packet spoofing, TCP attacks, and firewalls.</p>
+
+<h2 id="student-learning-objectives--outcomes">Student Learning Objectives / Outcomes</h2>
+<p>Students who successfully complete this course will be able to</p>
+<ul>
+  <li>understand the threats and countermeasure techniques at network and system levels</li>
+  <li>analyze and inspect security and privacy requirements for systems</li>
+  <li>apply basic cryptographic and network security techniques to achieve basic security goals of a system</li>
+  <li>employ mechanisms and technologies to design and build secure systems</li>
+</ul>
+
+<h2 id="prerequisites">Prerequisites</h2>
+<p>CSI 333 or ECE 233 (formerly ECE 333).</p>
+
+<p>Additional Notes:
+You are expected to have a good understanding of operating systems and systems programming. 
+You need to be familiar with Linux command line interface and be able to code in C. 
+Also, general knowledge of discrete math and networking can be helpful.</p>
+
+<h2 id="readings">Readings</h2>
+<p><strong>Required Textbook:</strong> Wenliang Du, “Computer &amp; Internet Security: A Hands-on Approach” (2nd/3rd Edition).</p>
+
+<p>The chapter numbers in the schedule are based on the <a href="https://www.amazon.com/gp/product/1733003932/">2nd edition</a> (ISBN-13: 978-1733003933, 2019) of the textbook. However, you can also use the <a href="https://www.amazon.com/Computer-Internet-Security-Hands-Approach-dp-1733003940/dp/1733003940/">3rd edition</a> (ISBN-13: 978-1733003940, 2022). The 3rd edition is slightly different (misses a few chapters and adds some new chapters).</p>
+
+<h2 id="communication-and-submissions">Communication and Submissions</h2>
+<p>The course syllabus and schedule is available on the <a href="/~amir/courses/csi524-f23/">course webpage</a>.
+Most of the tasks in this class will be handled via <a href="https://github.com/ualbany-csi524-f23">course GitHub organization</a> including the distribution of notes, assignments, assignment submission, and feedback.
+You will be invited to join the organization in the first week of classes.
+We will also use <a href="https://brightspace.albany.edu">Brightspace</a> for announcements and for your grades.</p>
+
+<h2 id="assessment-and-grading">Assessment and Grading</h2>
+<p>You will be assessed based on the following:</p>
+
+<dl>
+  <dt>In-Class Exercises</dt>
+  <dd>You will work on small in-class exercises either individually or in teams.
+Submissions are only accepted at the designated time during class.
+Missing submissions (including due to absence) will result in not receiving the grade for the associated exercises.
+Up to 10% of exercises will be dropped from your grade calculation to accommodate unforeseen situations.</dd>
+  <dt>Lab Assignments</dt>
+  <dd>You will work on about 11 take-home lab assignments. 
+Your lowest lab grade will be dropped from your grade calculation.</dd>
+  <dt>Exams</dt>
+  <dd>You will take a midterm exam (during the regular class sessions) and a final exam (during the final exam period).</dd>
+  <dt>Project</dt>
+  <dd>Students taking CSI 524 are required to work on a final project. The final project is optional for students taking CSI 424. The requirements for the final project will be described in its corresponding GitHub repository.</dd>
+  <dt>Final Numerical Grade</dt>
+  <dd>Your final numerical grade will be a weighted combination depending on which section of the class you are taking:</dd>
+</dl>
+
+<table>
+  <thead>
+    <tr>
+      <th>Course</th>
+      <th>In-Class</th>
+      <th>Labs</th>
+      <th>Project</th>
+      <th>Exam 1</th>
+      <th>Exam 2</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>CSI 424</td>
+      <td>5%</td>
+      <td>45%</td>
+      <td>Optional (+10%)</td>
+      <td>25%</td>
+      <td>25%</td>
+    </tr>
+  </tbody>
+  <tbody>
+    <tr>
+      <td>CSI 524</td>
+      <td>5%</td>
+      <td>25%</td>
+      <td>20%</td>
+      <td>25%</td>
+      <td>25%</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>The course is A-E graded. Conversion from the final numerical grade to the letter grade is based on cutoffs determined according to the grade distribution in the class. 
+  This results in more flexible and favorable grades compared to using a fixed conversion scale.</p>
+
+<h1 id="schedule">Schedule</h1>
+<p>The following schedule is tentative and will be regularly updated.
+It is your responsibility to check the schedule regularly. 
+The plus sign (+) means optional reading.</p>
+
+<table class="condensed">
+    <thead>
+        <tr>
+            <th class="text-center">Week</th>
+            <th class="text-center">Topic/Reading</th>
+            <th class="text-center">Assignment</th>
+        </tr>
+    </thead>
+    <tbody>
+        
+            
+            
+            
+                <tr>
+                    
+                        <td class="text-center highlight" colspan="3">Module 1: Introduction</td>
+                    
+                </tr>
+            
+        
+            
+            
+            
+                <tr>
+                    
+                        <td class="text-center">
+                            
+                                Aug22
+                            
+                        </td>
+                        <td>
+                            
+                                Course Overview, Setup
+                                
+                            
+                        </td>
+                        <td>
+                            
+                            
+                            
+                        </td>
+                    
+                </tr>
+            
+        
+            
+            
+            
+                <tr>
+                    
+                        <td class="text-center">
+                            
+                                Aug24
+                            
+                        </td>
+                        <td>
+                            
+                                Basic Security Concepts
+                                
+                                    <ul>
+                                        
+                                            
+  <li><a href="http://nob.cs.ucdavis.edu/book/book-aands2/files/ComputerSecurity2e_CH01.pdf">Computer Security: Art and Science (2ed, Matt Bishop) - Chapter 1, Sections 1.1-1.3</a></li>
+  <li><a href="http://nob.cs.ucdavis.edu/book/book-aands2/files/ComputerSecurity2e_CH14.pdf">Computer Security: Art and Science (2ed, Matt Bishop) - Chapter 14</a> (Direct links to sample chapters made available by the author – <a href="http://nob.cs.ucdavis.edu/book/book-aands2/">book website</a>)</li>
+
+
+                                        
+                                        
+                                    </ul>
+                                
+                            
+                        </td>
+                        <td>
+                            lab01 (setup)
+                            
+                                
+                                due Aug31
+                            
+                            
+                        </td>
+                    
+                </tr>
+            
+        
+            
+            
+            
+                <tr>
+                    
+                        <td class="text-center">
+                            
+                                Aug29
+                            
+                        </td>
+                        <td>
+                            
+                                Basic Security Concepts (cont.), Security Policies
+                                
+                                    <ul>
+                                        
+                                            
+  <li><a href="http://linuxcommand.org/tlcl.php">The Linux Command Line</a>: Chapter 9</li>
+
+
+                                        
+                                        
+                                            
+  <li class="optional">Samarati, de Vimercati, and Capitani, “<a href="https://link-springer-com.libproxy.albany.edu/chapter/10.1007/3-540-45608-2_3">Access Control: Policies, Models, and Mechanisms</a>,” in Foundations of Security Analysis and Design, vol. 2171, Springer, 2001, pp. 137–196.</li>
+  <li class="optional">Saltzer and Schroeder, “<a href="https://ieeexplore-ieee-org.libproxy.albany.edu/document/1451869">The protection of information in computer systems</a>,” Proceedings of the IEEE 63(9), pp. 1278–1308, 1975</li>
+
+
+                                        
+                                    </ul>
+                                
+                            
+                        </td>
+                        <td>
+                            
+                            
+                            
+                        </td>
+                    
+                </tr>
+            
+        
+            
+            
+            
+                <tr>
+                    
+                        <td class="text-center">
+                            
+                                Aug31
+                            
+                        </td>
+                        <td>
+                            
+                                Security Policies (cont.)
+                                
+                            
+                        </td>
+                        <td>
+                            lab02 (permissions)
+                            
+                                
+                                due Sep07
+                            
+                            
+                        </td>
+                    
+                </tr>
+            
+        
+            
+            
+            
+                <tr>
+                    
+                        <td class="text-center highlight" colspan="3">Module 2: Software Security</td>
+                    
+                </tr>
+            
+        
+            
+            
+            
+                <tr>
+                    
+                        <td class="text-center">
+                            
+                                Sep05
+                            
+                        </td>
+                        <td>
+                            
+                                Security Policies (cont.)
+                                
+                                    <ul>
+                                        
+                                            
+  <li><a href="#readings">Textbook</a>: Chapter 1</li>
+
+
+                                        
+                                        
+                                    </ul>
+                                
+                            
+                        </td>
+                        <td>
+                            
+                            
+                            
+                        </td>
+                    
+                </tr>
+            
+        
+            
+            
+            
+                <tr>
+                    
+                        <td class="text-center">
+                            
+                                Sep07
+                            
+                        </td>
+                        <td>
+                            
+                                SET-UID Programs
+                                
+                                    <ul>
+                                        
+                                            
+  <li><a href="#readings">Textbook</a>: Chapters 1</li>
+
+
+                                        
+                                        
+                                    </ul>
+                                
+                            
+                        </td>
+                        <td>
+                            
+                            
+                            
+                        </td>
+                    
+                </tr>
+            
+        
+            
+            
+            
+                <tr>
+                    
+                        <td class="text-center">
+                            
+                                Sep12
+                            
+                        </td>
+                        <td>
+                            
+                                SET-UID Programs (cont.), Environment Variables &amp; Attacks
+                                
+                                    <ul>
+                                        
+                                            
+  <li><a href="#readings">Textbook</a>: Chapter 2</li>
+
+
+                                        
+                                        
+                                    </ul>
+                                
+                            
+                        </td>
+                        <td>
+                            lab03 (setuid)
+                            
+                                
+                                due Sep19
+                            
+                            
+                        </td>
+                    
+                </tr>
+            
+        
+            
+            
+            
+                <tr>
+                    
+                        <td class="text-center">
+                            
+                                Sep14
+                            
+                        </td>
+                        <td>
+                            
+                                Environment Variables &amp; Attacks (cont.)
+                                
+                                    <ul>
+                                        
+                                            
+  <li><a href="#readings">Textbook</a>: Chapter 2</li>
+
+
+                                        
+                                        
+                                            
+  <li class="optional"><a href="http://cseweb.ucsd.edu/classes/fa09/cse141/tutorial_gcc_gdb.html">Tutorial of gcc and gdb</a></li>
+  <li class="optional"><a href="http://beej.us/guide/bggdb/">Beej’s Quick Guide to GDB</a></li>
+
+
+                                        
+                                    </ul>
+                                
+                            
+                        </td>
+                        <td>
+                            
+                            
+                            
+                        </td>
+                    
+                </tr>
+            
+        
+            
+            
+            
+                <tr>
+                    
+                        <td class="text-center">
+                            
+                                Sep19
+                            
+                        </td>
+                        <td>
+                            
+                                Buffer Overflow Attack
+                                
+                                    <ul>
+                                        
+                                            
+  <li><a href="#readings">Textbook</a>: Chapters 4</li>
+
+
+                                        
+                                        
+                                    </ul>
+                                
+                            
+                        </td>
+                        <td>
+                            
+                            
+                            
+                        </td>
+                    
+                </tr>
+            
+        
+            
+            
+            
+                <tr>
+                    
+                        <td class="text-center">
+                            
+                                Sep21
+                            
+                        </td>
+                        <td>
+                            
+                                Buffer Overflow Attack (cont.)
+                                
+                                    <ul>
+                                        
+                                            
+  <li><a href="#readings">Textbook</a>: Chapter 4</li>
+
+
+                                        
+                                        
+                                    </ul>
+                                
+                            
+                        </td>
+                        <td>
+                            lab04 (bof)
+                            
+                                
+                                due Sep28
+                            
+                            
+                        </td>
+                    
+                </tr>
+            
+        
+            
+            
+            
+                <tr>
+                    
+                        <td class="text-center">
+                            
+                                Sep26
+                            
+                        </td>
+                        <td>
+                            
+                                Return-to-libc Attack
+                                
+                                    <ul>
+                                        
+                                            
+  <li><a href="#readings">Textbook</a>: Chapter 5</li>
+
+
+                                        
+                                        
+                                    </ul>
+                                
+                            
+                        </td>
+                        <td>
+                            
+                            
+                            
+                        </td>
+                    
+                </tr>
+            
+        
+            
+            
+            
+                <tr>
+                    
+                        <td class="text-center">
+                            
+                                Sep28
+                            
+                        </td>
+                        <td>
+                            
+                                Return-to-libc Attack (cont.)
+                                
+                                    <ul>
+                                        
+                                            
+  <li><a href="#readings">Textbook</a>: Chapter 5</li>
+
+
+                                        
+                                        
+                                    </ul>
+                                
+                            
+                        </td>
+                        <td>
+                            lab05 (ret2libc)
+                            
+                                
+                                due Oct05
+                            
+                            
+                        </td>
+                    
+                </tr>
+            
+        
+            
+            
+            
+                <tr>
+                    
+                        <td class="text-center">
+                            
+                                Oct03
+                            
+                        </td>
+                        <td>
+                            
+                                Race Condition Vulnerability
+                                
+                                    <ul>
+                                        
+                                            
+  <li><a href="#readings">Textbook</a>: Chapter 7</li>
+
+
+                                        
+                                        
+                                    </ul>
+                                
+                            
+                        </td>
+                        <td>
+                            
+                            
+                            
+                        </td>
+                    
+                </tr>
+            
+        
+            
+            
+            
+                <tr>
+                    
+                        <td class="text-center">
+                            
+                                Oct05
+                            
+                        </td>
+                        <td>
+                            
+                                Pre-midterm Review
+                                
+                            
+                        </td>
+                        <td>
+                            
+                            
+                            
+                        </td>
+                    
+                </tr>
+            
+        
+            
+            
+            
+                <tr>
+                    
+                        <td class="text-center">
+                            
+                                Oct10
+                            
+                        </td>
+                        <td>
+                            
+                                No Class (Fall Break)
+                            
+                        </td>
+                        <td>
+                            
+                            
+                            
+                        </td>
+                    
+                </tr>
+            
+        
+            
+            
+            
+                <tr>
+                    
+                        <td class="text-center">
+                            
+                                Oct12
+                            
+                        </td>
+                        <td>
+                            
+                                <mark>Midterm Exam</mark>
+                            
+                        </td>
+                        <td>
+                            
+                            
+                            
+                        </td>
+                    
+                </tr>
+            
+        
+            
+            
+            
+                <tr>
+                    
+                        <td class="text-center highlight" colspan="3">Module 3: Web Security</td>
+                    
+                </tr>
+            
+        
+            
+            
+            
+                <tr>
+                    
+                        <td class="text-center">
+                            
+                                Oct17
+                            
+                        </td>
+                        <td>
+                            
+                                Race Condition Vulnerability (cont.), Cryptography Basics
+                                
+                                    <ul>
+                                        
+                                            
+  <li><a href="#readings">Textbook</a>: Chapters 21.1-21.3, 23.1-23.3</li>
+
+
+                                        
+                                        
+                                    </ul>
+                                
+                            
+                        </td>
+                        <td>
+                            lab06 (race)
+                            
+                                
+                                due Oct24
+                            
+                            
+                        </td>
+                    
+                </tr>
+            
+        
+            
+            
+            
+                <tr>
+                    
+                        <td class="text-center">
+                            
+                                Oct19
+                            
+                        </td>
+                        <td>
+                            
+                                Cryptography Basics
+                                
+                                    <ul>
+                                        
+                                            
+  <li><a href="#readings">Textbook</a>: Chapters 21.1-21.3, 23.1-23.3</li>
+
+
+                                        
+                                        
+                                    </ul>
+                                
+                            
+                        </td>
+                        <td>
+                            
+                            
+                            
+                        </td>
+                    
+                </tr>
+            
+        
+            
+            
+            
+                <tr>
+                    
+                        <td class="text-center">
+                            
+                                Oct24
+                            
+                        </td>
+                        <td>
+                            
+                                Cross Site Request Forgery Attack
+                                
+                                    <ul>
+                                        
+                                            
+  <li><a href="#readings">Textbook</a>: Chapter 10</li>
+
+
+                                        
+                                        
+                                    </ul>
+                                
+                            
+                        </td>
+                        <td>
+                            lab07 (csrf)
+                            
+                                
+                                due Nov02
+                            
+                            
+                        </td>
+                    
+                </tr>
+            
+        
+            
+            
+            
+                <tr>
+                    
+                        <td class="text-center">
+                            
+                                Oct26
+                            
+                        </td>
+                        <td>
+                            
+                                Cross Site Request Forgery Attack (cont.)
+                                
+                            
+                        </td>
+                        <td>
+                            
+                            
+                            
+                        </td>
+                    
+                </tr>
+            
+        
+            
+            
+            
+                <tr>
+                    
+                        <td class="text-center">
+                            
+                                Oct31
+                            
+                        </td>
+                        <td>
+                            
+                                Cross Site Scripting Attack
+                                
+                                    <ul>
+                                        
+                                            
+  <li><a href="#readings">Textbook</a>: Chapter 11</li>
+
+
+                                        
+                                        
+                                    </ul>
+                                
+                            
+                        </td>
+                        <td>
+                            lab08 (xss)
+                            
+                                
+                                due Nov07
+                            
+                            
+                        </td>
+                    
+                </tr>
+            
+        
+            
+            
+            
+                <tr>
+                    
+                        <td class="text-center">
+                            
+                                Nov02
+                            
+                        </td>
+                        <td>
+                            
+                                No Class ()
+                            
+                        </td>
+                        <td>
+                            
+                            
+                            
+                        </td>
+                    
+                </tr>
+            
+        
+            
+            
+            
+                <tr>
+                    
+                        <td class="text-center">
+                            
+                                Nov07
+                            
+                        </td>
+                        <td>
+                            
+                                SQL Injection Attack
+                                
+                                    <ul>
+                                        
+                                            
+  <li><a href="#readings">Textbook</a>: Chapter 12</li>
+
+
+                                        
+                                        
+                                    </ul>
+                                
+                            
+                        </td>
+                        <td>
+                            lab09 (sqli)
+                            
+                                
+                                due Nov14
+                            
+                            
+                        </td>
+                    
+                </tr>
+            
+        
+            
+            
+            
+                <tr>
+                    
+                        <td class="text-center highlight" colspan="3">Module 4: Network Security</td>
+                    
+                </tr>
+            
+        
+            
+            
+            
+                <tr>
+                    
+                        <td class="text-center">
+                            
+                                Nov09
+                            
+                        </td>
+                        <td>
+                            
+                                Packet Sniffing and Spoofing
+                                
+                                    <ul>
+                                        
+                                            
+  <li><a href="#readings">Textbook</a>: Chapter 15</li>
+
+
+                                        
+                                        
+                                            
+  <li class="optional"><a href="http://beej.us/guide/bgnet/">Beej’s Guide to Network Programming</a>: sec3–sec5</li>
+  <li class="optional"><a href="https://www.tcpdump.org/pcap.html">Programming with pcap</a></li>
+  <li class="optional"><a href="https://opensourceforu.com/2015/03/a-guide-to-using-raw-sockets/">A Guide to Using Raw Sockets</a></li>
+
+
+                                        
+                                    </ul>
+                                
+                            
+                        </td>
+                        <td>
+                            lab10 (packets)
+                            
+                            
+                        </td>
+                    
+                </tr>
+            
+        
+            
+            
+            
+                <tr>
+                    
+                        <td class="text-center">
+                            
+                                Nov14
+                            
+                        </td>
+                        <td>
+                            
+                                Attacks on TCP Protocol
+                                
+                                    <ul>
+                                        
+                                            
+  <li><a href="#readings">Textbook</a>: Chapter 16</li>
+
+
+                                        
+                                        
+                                    </ul>
+                                
+                            
+                        </td>
+                        <td>
+                            
+                            
+                            
+                        </td>
+                    
+                </tr>
+            
+        
+            
+            
+            
+                <tr>
+                    
+                        <td class="text-center">
+                            
+                                Nov16
+                            
+                        </td>
+                        <td>
+                            
+                                Attacks on TCP Protocol (cont.)
+                                
+                                    <ul>
+                                        
+                                            
+  <li><a href="#readings">Textbook</a>: Chapter 16</li>
+
+
+                                        
+                                        
+                                    </ul>
+                                
+                            
+                        </td>
+                        <td>
+                            lab11 (tcp)
+                            
+                            
+                        </td>
+                    
+                </tr>
+            
+        
+            
+            
+            
+                <tr>
+                    
+                        <td class="text-center">
+                            
+                                Nov21
+                            
+                        </td>
+                        <td>
+                            
+                                Domain Name System (DNS)
+                                
+                                    <ul>
+                                        
+                                            
+  <li><a href="#readings">Textbook</a>: Chapter 18</li>
+
+
+                                        
+                                        
+                                    </ul>
+                                
+                            
+                        </td>
+                        <td>
+                            lab12 (DNS)
+                            
+                            
+                        </td>
+                    
+                </tr>
+            
+        
+            
+            
+            
+                <tr>
+                    
+                        <td class="text-center">
+                            
+                                Nov23
+                            
+                        </td>
+                        <td>
+                            
+                                No Class (Thanksgiving Break)
+                            
+                        </td>
+                        <td>
+                            
+                            
+                            
+                        </td>
+                    
+                </tr>
+            
+        
+            
+            
+            
+                <tr>
+                    
+                        <td class="text-center">
+                            
+                                Nov28
+                            
+                        </td>
+                        <td>
+                            
+                                Final Review
+                                
+                            
+                        </td>
+                        <td>
+                            
+                            
+                            
+                        </td>
+                    
+                </tr>
+            
+        
+            
+            
+            
+                <tr>
+                    
+                        <td class="text-center highlight" colspan="3">Module 5: Misc. Topics</td>
+                    
+                </tr>
+            
+        
+            
+            
+            
+                <tr>
+                    
+                        <td class="text-center">
+                            
+                                Nov30
+                            
+                        </td>
+                        <td>
+                            
+                                Project Presentations
+                                
+                            
+                        </td>
+                        <td>
+                            
+                            
+                            
+                        </td>
+                    
+                </tr>
+            
+        
+            
+            
+            
+                <tr>
+                    
+                        <td class="text-center">
+                            
+                                Dec08
+                            
+                        </td>
+                        <td>
+                            
+                                <mark>Final Exam (Friday, Dec08, 10:30am-12:30pm)</mark>
+                            
+                        </td>
+                        <td>
+                            
+                            
+                            
+                        </td>
+                    
+                </tr>
+            
+        
+    </tbody>
+</table>
+
+<h1 id="policies">Policies</h1>
+<dl>
+  <dt>No Late Submission (Except One Assignment)</dt>
+  <dd>Assignments will be released at least a week before their due date. 
+You are highly recommended to study an assignment as soon as it becomes available. 
+There will be ample opportunities to benefit from office hours and communication with me and the TAs before the due date. Assignments are <strong>due at 11:59pm</strong> on the day of their deadline. 
+<strong>Submissions after due time will receive no points</strong>.
+However, in order to account for unforeseen situations, you can <strong>request to submit only one assignment late</strong>.
+In order for your late assignment to be graded, you must email the instructor to request a late submission before the deadline. 
+You should note that a late-submission request may not be always accepted (e.g., when the solutions need to be discussed in class immediately after a submission). 
+Therefore, you are recommended to submit a version of your solution before the deadline if your request has not been reviewed yet.
+You have up to <strong>3 days to submit after the deadline if your late-submission request is approved</strong>.
+Also, note that you only have one such opportunity during the semester. Therefore, it is advised to leave that option for truly critical situations.</dd>
+  <dt>Review of Grades</dt>
+  <dd>Any issue regarding your grade in a specific assignment must be communicated to us no later than <strong>5 business days after the posting day of the grades</strong>. There will be no re-grading after the 5-day period has passed.</dd>
+  <dt>Attending Classes</dt>
+  <dd>Class attendance is required for successful completion of this course.</dd>
+  <dt>Attending Exams</dt>
+  <dd>The midterm exam is given in regular hours of the class. 
+The final exam will be during the final exam period. 
+Tentative exam dates are given in the course schedule.
+Makeup exams will be given only for valid and verifiable extenuating circumstances (e.g., a major medical situation).
+It is the student’s responsibility to contact the instructor <strong>at least a week ahead of the exam date</strong> and arrange to take a makeup exam at an alternate date/time.
+If an absence in exam is expected due to religious observance, the student is responsible to notify the instructor <strong>at least 30 days before the exam date</strong>. 
+Otherwise, their request may not be granted.
+Makeup exams are not guaranteed and will be generally harder than the regular exams.</dd>
+  <dt>Academic Integrity</dt>
+  <dd>It is every student’s responsibility to become familiar with the <a href="http://www.albany.edu/studentconduct/standards_of_academic_integrity.php">standards of academic integrity at the University</a>. 
+Claims of ignorance, of unintentional error, or of academic or personal pressures are not sufficient reasons for violations of academic integrity. 
+Any incident of academic dishonesty can result in no credit for the affected assignment and a report sent to the appropriate University authorities (e.g., Dean of Undergraduate Education or Graduate Studies). 
+Repeated violations will result result a failing grade for the course.
+
+    <p>For all assignments, you must submit your own work, except where collaboration is explicitly permitted or required.
+Providing your solutions to others or copying even parts of a solution is considered plagiarism.
+In projects/papers, you must properly cite any resources from which you borrow ideas and clearly distinguish them from your contributions.</p>
+  </dd>
+  <dt>Use of Electronic Devices</dt>
+  <dd>Computers or other electronic devices may be only used during class for note-taking, in-class exercises, or other class-related activities. 
+You are not allowed to perform any unrelated tasks during class.</dd>
+  <dt>Students with Disabilities</dt>
+  <dd>Reasonable accommodation will be provided for students with documented disabilities. 
+If you believe you have a disability requiring accommodation in this class, please notify the <a href="https://www.albany.edu/disability/">Disability Access and Inclusion Student Services (DAISS)</a> (Campus Center 130, 518-442-5501). 
+That office will provide me with verification of your disability, and will recommend appropriate accommodations. 
+In general, it is your responsibility to contact me at least one week before the relevant activity to make arrangements.</dd>
+  <dt>Health and Well-Being</dt>
+  <dd>Your physical and mental health is very important.
+The university has several <a href="https://www.albany.edu/health-well-being">health services</a> when you need them.
+In particular, <a href="https://www.albany.edu/health-well-being/mental-health/caps">Counseling and Psychological Services (CAPS)</a> provides free, confidential services including psychological counseling and evaluation for emotional, social, and academic concerns.
+
+    <p>If your life or someone else’s life is in danger, please call 911.
+If you are in a crisis and need help right away, please call the National Suicide Prevention Lifeline at 1-800-273-TALK (8255).
+Students dealing with heightened feelings of sadness or hopelessness, increased anxiety, or thoughts of suicide may also text “GOT5” to 741741 (Crisis Text Line).</p>
+  </dd>
+</dl>
+
+      </div>
+    </main></body>
+
+</html>

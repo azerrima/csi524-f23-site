@@ -1,0 +1,15 @@
+title: "CSI 424/524: Computer Security (Fall 2023)"
+description: >- # this means to ignore newlines until "baseurl:"
+  CSI 424/524 (Fall 2023), Computer Science Department, University at Albany
+baseurl: "/~amir/courses/csi524-f23" # the subpath of your site, e.g. /blog
+url: "www.cs.albany.edu" # the base hostname & protocol for your site, e.g. http://example.com
+
+# Build settings
+theme: minima
+
+# plugins:
+#   - jekyll-feed
+
+# Exclude from processing.
+exclude:
+  - sync-w-amir-jekyll-site

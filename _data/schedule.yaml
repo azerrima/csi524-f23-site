@@ -1,0 +1,151 @@
+- type: module
+  topic: "Module 1: Introduction"
+- type: class
+  topic: Course Overview, Setup
+- type: class
+  topic: Basic Security Concepts
+  req-readings: |
+    - [Computer Security: Art and Science (2ed, Matt Bishop) - Chapter 1, Sections 1.1-1.3](http://nob.cs.ucdavis.edu/book/book-aands2/files/ComputerSecurity2e_CH01.pdf) 
+    - [Computer Security: Art and Science (2ed, Matt Bishop) - Chapter 14](http://nob.cs.ucdavis.edu/book/book-aands2/files/ComputerSecurity2e_CH14.pdf) (Direct links to sample chapters made available by the author -- [book website](http://nob.cs.ucdavis.edu/book/book-aands2/))
+  assignment: lab01 (setup)
+  assignment-due: 7
+- type: class
+  topic:  Basic Security Concepts (cont.), Security Policies
+  req-readings: |
+    - [The Linux Command Line](http://linuxcommand.org/tlcl.php): Chapter 9
+  opt-readings: |
+    - Samarati, de Vimercati, and Capitani, “[Access Control: Policies, Models, and Mechanisms](https://link-springer-com.libproxy.albany.edu/chapter/10.1007/3-540-45608-2_3),” in Foundations of Security Analysis and Design, vol. 2171, Springer, 2001, pp. 137–196.
+    - Saltzer and Schroeder, "[The protection of information in computer systems](https://ieeexplore-ieee-org.libproxy.albany.edu/document/1451869)," Proceedings of the IEEE 63(9), pp. 1278–1308, 1975
+- type: class
+  topic: Security Policies (cont.)
+  assignment: lab02 (permissions)
+  assignment-due: 7
+- type: module
+  topic: "Module 2: Software Security"
+- type: class
+  topic: Security Policies (cont.)
+  req-readings: |
+    - [Textbook](#readings): Chapter 1
+- type: class
+  topic: SET-UID Programs
+  req-readings: |
+    - [Textbook](#readings): Chapters 1
+- type: class
+  topic: SET-UID Programs (cont.), Environment Variables & Attacks
+  req-readings: |
+    - [Textbook](#readings): Chapter 2
+  assignment: lab03 (setuid)
+  assignment-due: 7
+- type: class
+  topic: Environment Variables & Attacks (cont.)
+  req-readings: |
+    - [Textbook](#readings): Chapter 2
+  opt-readings: |
+    - [Tutorial of gcc and gdb](http://cseweb.ucsd.edu/classes/fa09/cse141/tutorial_gcc_gdb.html)
+    - [Beej's Quick Guide to GDB](http://beej.us/guide/bggdb/)
+- type: class
+  topic: Buffer Overflow Attack
+  req-readings: |
+    - [Textbook](#readings): Chapters 4
+- type: class
+  topic: Buffer Overflow Attack (cont.)
+  req-readings: |
+    - [Textbook](#readings): Chapter 4
+  assignment: lab04 (bof)
+  assignment-due: 7
+- type: class
+  topic: Return-to-libc Attack
+  req-readings: |
+    - [Textbook](#readings): Chapter 5
+- type: class
+  topic: Return-to-libc Attack (cont.)
+  req-readings: |
+    - [Textbook](#readings): Chapter 5
+  assignment: lab05 (ret2libc)
+  assignment-due: 7
+- type: class
+  topic: Race Condition Vulnerability
+  req-readings: |
+    - [Textbook](#readings): Chapter 7
+- type: class
+  topic: Pre-midterm Review
+  # assignment-due: 14
+- type: no-class
+  topic: "Fall Break"
+- type: exam
+  topic: "Midterm Exam"
+- type: module
+  topic: "Module 3: Web Security"
+- type: class
+  topic: Race Condition Vulnerability (cont.), Cryptography Basics
+  req-readings: |
+    - [Textbook](#readings): Chapters 21.1-21.3, 23.1-23.3
+  assignment: lab06 (race)
+  assignment-due: 7
+  # topic: Web Systems & Policies
+- type: class
+  topic: Cryptography Basics
+  req-readings: |
+    - [Textbook](#readings): Chapters 21.1-21.3, 23.1-23.3
+- type: class
+  topic: Cross Site Request Forgery Attack
+  req-readings: |
+    - [Textbook](#readings): Chapter 10
+  assignment: lab07 (csrf)
+  assignment-due: 9
+- type: class
+  topic: Cross Site Request Forgery Attack (cont.)
+- type: class
+  topic: Cross Site Scripting Attack
+  req-readings: |
+    - [Textbook](#readings): Chapter 11
+  assignment: lab08 (xss)
+  assignment-due: 7
+- type: no-class
+  topic: 
+- type: class
+  topic: SQL Injection Attack
+  req-readings: |
+    - [Textbook](#readings): Chapter 12
+  assignment: lab09 (sqli)
+  assignment-due: 7
+- type: module
+  topic: "Module 4: Network Security"
+- type: class
+  topic: Packet Sniffing and Spoofing
+  req-readings: |
+    - [Textbook](#readings): Chapter 15
+  opt-readings: |
+    - [Beej’s Guide to Network Programming](http://beej.us/guide/bgnet/): sec3--sec5
+    - [Programming with pcap](https://www.tcpdump.org/pcap.html)
+    - [A Guide to Using Raw Sockets](https://opensourceforu.com/2015/03/a-guide-to-using-raw-sockets/)
+  assignment: lab10 (packets)
+  # assignment-due: 11
+- type: class (packets)
+  topic: Attacks on TCP Protocol
+  req-readings: |
+    - [Textbook](#readings): Chapter 16
+  # assignment-due-next: true
+- type: class
+  topic: Attacks on TCP Protocol (cont.)
+  req-readings: |
+    - [Textbook](#readings): Chapter 16
+  assignment: lab11 (tcp)
+  # assignment-due: 10
+- type: class
+  topic: Domain Name System (DNS)
+  req-readings: |
+    - [Textbook](#readings): Chapter 18
+  assignment: lab12 (DNS)
+- type: no-class
+  topic: "Thanksgiving Break"
+- type: class
+  topic: Final Review
+  # assignment-due-next: true
+- type: module
+  topic: "Module 5: Misc. Topics"
+- type: class
+  topic: Project Presentations
+- type: exam
+  date: Dec08
+  topic: "Final Exam (Friday, Dec08, 10:30am-12:30pm)"
